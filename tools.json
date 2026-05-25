@@ -1,0 +1,27 @@
+[
+    { "checkbox": "chBrave",     "package": "brave-bin" },
+    { "checkbox": "chFirefox",   "package": "firefox" },
+    { "checkbox": "chChromium",  "package": "chromium" },
+    { "checkbox": "chOpera",     "package": "opera" },
+
+    { "checkbox": "chCode",      "package": "code" },
+    { "checkbox": "chZed",       "package": "zed" },
+    { "checkbox": "chVSCodium",  "package": "vscodium-bin" },
+    { "checkbox": "chNeovim",    "package": "neovim" },
+
+    { "checkbox": "chDiscord",   "package": "discord" },
+    { "checkbox": "chTelegram",  "package": "telegram-desktop" },
+    { "checkbox": "chSpotify",   "package": "spotify-launcher" },
+
+    { "checkbox": "chSteam",     "package": "steam" },
+    { "checkbox": "chLutris",    "package": "lutris" },
+    { "checkbox": "chHeroic",    "package": "heroic-games-launcher-bin" },
+
+    { "checkbox": "chGIMP",      "package": "gimp" },
+    { "checkbox": "chKrita",     "package": "krita" },
+    { "checkbox": "chInkscape",  "package": "inkscape" },
+
+    { "checkbox": "chOBS",       "package": "obs-studio" },
+    { "checkbox": "chVLC",       "package": "vlc" },
+    { "checkbox": "chKdenlive",  "package": "kdenlive" }
+]
