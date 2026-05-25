@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 28,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 73,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 56,
+				"line" : 59,
 				"parent" : 0
 			},
 			{
@@ -359,7 +359,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				11
 			]
 		}
 	],
@@ -449,6 +450,9 @@
 	"orderDependencies" : 
 	[
 		{
+			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -475,7 +479,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				11
 			]
 		},
 		{
@@ -483,7 +488,7 @@
 			"sourceIndexes" : 
 			[
 				3,
-				7
+				9
 			]
 		},
 		{
@@ -494,19 +499,28 @@
 			]
 		},
 		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				5
+			]
+		},
+		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				5,
 				6,
-				8
+				7,
+				8,
+				10
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9
+				12,
+				13
 			]
 		}
 	],
@@ -543,13 +557,23 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "LinutilGUI_en_EE.ts",
+			"path" : "resources.qrc",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 4,
+			"path" : "LinutilGUI_en_EE.ts",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
 			"path" : "tools.json",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "README.md",
+			"sourceGroupIndex" : 4
 		},
 		{
 			"backtrace" : 0,
@@ -561,13 +585,26 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/LinutilGUI_autogen/timestamp",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/LinutilGUI_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.rule",
+			"sourceGroupIndex" : 5
 		}
 	],
 	"type" : "EXECUTABLE"
