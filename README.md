@@ -28,7 +28,7 @@ This tool is designed for:
 
 ## ⚠️ NB! Important Notice
 
-**This application does NOT currently support all Linux distributions.**
+**This application does NOT currently support all Linux distributions well.**
 
 
 ---

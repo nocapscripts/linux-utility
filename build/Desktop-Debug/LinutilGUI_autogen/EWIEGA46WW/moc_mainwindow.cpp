@@ -42,6 +42,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_btnDisablePAM_clicked",
         "",
         "on_btnRestorePAM_clicked",
+        "on_btnUpdateSystem_clicked",
+        "updateDistroLabel",
         "onCheckboxToggled",
         "QCheckBox*",
         "checkbox",
@@ -54,9 +56,13 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnRestorePAM_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnUpdateSystem_clicked'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'updateDistroLabel'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onCheckboxToggled'
-        QtMocHelpers::SlotData<void(QCheckBox *, const QString &, bool)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 }, { QMetaType::QString, 7 }, { QMetaType::Bool, 8 },
+        QtMocHelpers::SlotData<void(QCheckBox *, const QString &, bool)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 7, 8 }, { QMetaType::QString, 9 }, { QMetaType::Bool, 10 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -83,14 +89,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_btnDisablePAM_clicked(); break;
         case 1: _t->on_btnRestorePAM_clicked(); break;
-        case 2: _t->onCheckboxToggled((*reinterpret_cast<std::add_pointer_t<QCheckBox*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[3]))); break;
+        case 2: _t->on_btnUpdateSystem_clicked(); break;
+        case 3: _t->updateDistroLabel(); break;
+        case 4: _t->onCheckboxToggled((*reinterpret_cast<std::add_pointer_t<QCheckBox*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[3]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 2:
+        case 4:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -120,14 +128,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

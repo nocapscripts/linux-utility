@@ -12,6 +12,8 @@
 #include <QProcess>
 #include <QRegularExpression>
 
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     setFixedSize(900, 629);
+    updateDistroLabel();
 
     ui->statusbar->clearMessage();
 
@@ -94,6 +97,95 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::updateDistroLabel()
+{
+    QFile osFile("/etc/os-release");
+    if (!osFile.open(QIODevice::ReadOnly))
+    {
+        ui->DistInfo_Label->setText("Unknown");
+        return;
+    }
+
+    QString data = osFile.readAll();
+
+    if (data.contains("arch") || data.contains("cachyos"))
+        ui->DistInfo_Label->setText("Arch / CachyOS");
+
+    else if (data.contains("ubuntu") || data.contains("debian"))
+        ui->DistInfo_Label->setText("Ubuntu / Debian");
+
+    else if (data.contains("fedora"))
+        ui->DistInfo_Label->setText("Fedora");
+
+    else if (data.contains("opensuse"))
+        ui->DistInfo_Label->setText("OpenSUSE");
+
+    else
+        ui->DistInfo_Label->setText("Unknown");
+}
+
+QString MainWindow::getPackageManager()
+{
+    QFile osFile("/etc/os-release");
+    if (!osFile.open(QIODevice::ReadOnly))
+
+        return "unknown";
+
+    QString data = osFile.readAll();
+
+    if (data.contains("arch") || data.contains("cachyos"))
+
+        return "pacman";
+
+    if (data.contains("ubuntu") || data.contains("debian"))
+
+        return "apt";
+
+    if (data.contains("fedora"))
+
+        return "dnf";
+
+    if (data.contains("opensuse"))
+
+        return "zypper";
+
+    return "unknown";
+}
+
+QStringList MainWindow::getInstallCommand(const QString &pkgManager, const QString &package)
+{
+    if (pkgManager == "pacman")
+        return {"pacman", "-Sy", "--noconfirm", package};
+
+    if (pkgManager == "apt")
+        return {"apt", "install", "-y", package};
+
+    if (pkgManager == "dnf")
+        return {"dnf", "install", "-y", package};
+
+    if (pkgManager == "zypper")
+        return {"zypper", "--non-interactive", "install", package};
+
+    return {};
+}
+
+QStringList MainWindow::getRemoveCommand(const QString &pkgManager, const QString &package)
+{
+    if (pkgManager == "pacman")
+        return {"pacman", "-Rs", "--noconfirm", package};
+
+    if (pkgManager == "apt")
+        return {"apt", "remove", "-y", package};
+
+    if (pkgManager == "dnf")
+        return {"dnf", "remove", "-y", package};
+
+    if (pkgManager == "zypper")
+        return {"zypper", "--non-interactive", "remove", package};
+
+    return {};
+}
+
 
 bool MainWindow::isInstalled(const QString &package)
 {
@@ -119,6 +211,50 @@ void MainWindow::hideProgress()
 {
     ui->statusbar->clearMessage();
     setEnabled(true);
+}
+
+void MainWindow::runInTerminal(const QString &txt, const QStringList &args)
+{
+    ui->statusbar->showMessage(txt + " (starting terminal...)");
+
+    QString command = "pkexec";
+
+    for (const QString &arg : args) {
+        command += " " + arg;
+    }
+
+    QProcess *p = new QProcess(this);
+
+    connect(p, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this,
+            [this, txt, p](int exitCode, QProcess::ExitStatus)
+            {
+                if (exitCode == 0)
+                    ui->statusbar->showMessage(txt + " done");
+                else
+                    ui->statusbar->showMessage(txt + " failed");
+
+                p->deleteLater();
+            });
+
+    connect(p, &QProcess::errorOccurred,
+            this,
+            [this, txt, p](QProcess::ProcessError)
+            {
+                QMessageBox::warning(this, "Error", txt + " failed to start terminal");
+                p->deleteLater();
+            });
+
+    p->start(
+        "konsole",
+        {
+            "-e",
+            "bash", "-c",
+            command + "; echo; echo 'Press Enter to close...'; read"
+        }
+        );
+
+    ui->statusbar->showMessage(txt + " launched in terminal");
 }
 
 void MainWindow::runWithProgress(
@@ -169,14 +305,22 @@ void MainWindow::runWithProgress(
 
 void MainWindow::installPackage(const QString &package)
 {
-    runWithProgress("Installing " + package + "...",
-                    {"pacman", "-S", "--noconfirm", package});
+    QString pm = getPackageManager();
+
+    runWithProgress(
+        "Installing " + package + "...",
+        getInstallCommand(pm, package)
+        );
 }
 
 void MainWindow::removePackage(const QString &package)
 {
-    runWithProgress("Removing " + package + "...",
-                    {"pacman", "-Rs", "--noconfirm", package});
+    QString pm = getPackageManager();
+
+    runWithProgress(
+        "Removing " + package + "...",
+        getRemoveCommand(pm, package)
+        );
 }
 
 void MainWindow::onCheckboxToggled(
@@ -224,4 +368,11 @@ void MainWindow::on_btnRestorePAM_clicked()
             "EOF"
         }
         );
+}
+
+void MainWindow::on_btnUpdateSystem_clicked()
+{
+
+    runInTerminal("Updating system packages . . .", {"pacman", "-Syu", "--noconfirm"});
+
 }
