@@ -46,6 +46,7 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "writeLog",
         "txt",
         "updateDistroLabel",
+        "getSystemData",
         "onCheckboxToggled",
         "QCheckBox*",
         "checkbox",
@@ -66,9 +67,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         }}),
         // Slot 'updateDistroLabel'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'getSystemData'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onCheckboxToggled'
-        QtMocHelpers::SlotData<void(QCheckBox *, const QString &, bool)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 9, 10 }, { QMetaType::QString, 11 }, { QMetaType::Bool, 12 },
+        QtMocHelpers::SlotData<void(QCheckBox *, const QString &, bool)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 10, 11 }, { QMetaType::QString, 12 }, { QMetaType::Bool, 13 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -98,14 +101,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_btnUpdateSystem_clicked(); break;
         case 3: _t->writeLog((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 4: _t->updateDistroLabel(); break;
-        case 5: _t->onCheckboxToggled((*reinterpret_cast<std::add_pointer_t<QCheckBox*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[3]))); break;
+        case 5: _t->getSystemData(); break;
+        case 6: _t->onCheckboxToggled((*reinterpret_cast<std::add_pointer_t<QCheckBox*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[3]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 5:
+        case 6:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -135,14 +139,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

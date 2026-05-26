@@ -5,9 +5,7 @@
 #include <QCheckBox>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -17,7 +15,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
-    static QString& OSType;
+
+
 
 private slots:
     void on_btnDisablePAM_clicked();
@@ -25,6 +24,7 @@ private slots:
     void on_btnUpdateSystem_clicked();
     void writeLog(const QString& txt);
     void updateDistroLabel();
+    void getSystemData();
     void onCheckboxToggled(QCheckBox* checkbox, const QString& package, bool checked);
 
 private:
@@ -35,14 +35,9 @@ private:
     void installPackage(const QString& package);
     void removePackage(const QString& package);
     void showProgress(const QString& message);
-
-    void runInTerminal(const QString& txt,const QStringList& args);
+    void runInTerminal(const QString& txt, const QStringList& args);
     void hideProgress();
-
-
     QString getPackageManager();
-
-    // 🔥 Optional but recommended for full compatibility
     QStringList getInstallCommand(const QString& pm, const QString& package);
     QStringList getRemoveCommand(const QString& pm, const QString& package);
 };

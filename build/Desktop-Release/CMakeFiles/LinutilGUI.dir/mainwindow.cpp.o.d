@@ -368,13 +368,15 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtGui/qguiapplication.h \
  /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtWidgets/QCheckBox /usr/include/qt6/QtWidgets/QLabel \
- /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
- /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtWidgets/QCheckBox /usr/include/qt6/QtWidgets/QFrame \
+ /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtWidgets/QGroupBox \
+ /usr/include/qt6/QtWidgets/qgroupbox.h /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtGui/qpicture.h \
+ /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
- /usr/include/qt6/QtWidgets/QProgressBar \
- /usr/include/qt6/QtWidgets/qprogressbar.h \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
  /usr/include/qt6/QtWidgets/QStatusBar \
  /usr/include/qt6/QtWidgets/qstatusbar.h \
  /usr/include/qt6/QtWidgets/QTabWidget /usr/include/qt6/QtWidgets/QWidget \
@@ -406,12 +408,14 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/c++/16.1.1/bits/istream.tcc \
  /usr/include/c++/16.1.1/bits/sstream.tcc /usr/include/c++/16.1.1/codecvt \
  /usr/include/c++/16.1.1/bits/fs_dir.h \
- /usr/include/c++/16.1.1/bits/fs_ops.h /usr/include/qt6/QtCore/QJsonArray \
- /usr/include/qt6/QtCore/qjsonarray.h \
+ /usr/include/c++/16.1.1/bits/fs_ops.h /usr/include/qt6/QtCore/QDir \
+ /usr/include/qt6/QtCore/qdir.h /usr/include/qt6/QtCore/qdirlisting.h \
+ /usr/include/qt6/QtCore/qdatetime.h /usr/include/qt6/QtCore/qcalendar.h \
+ /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
+ /usr/include/qt6/QtCore/QJsonArray /usr/include/qt6/QtCore/qjsonarray.h \
  /usr/include/qt6/QtCore/qjsonvalue.h \
  /usr/include/qt6/QtCore/qcborvalue.h \
  /usr/include/qt6/QtCore/qcborcommon.h \
- /usr/include/qt6/QtCore/qdatetime.h /usr/include/qt6/QtCore/qcalendar.h \
  /usr/include/qt6/QtCore/qregularexpression.h \
  /usr/include/qt6/QtCore/quuid.h /usr/include/qt6/QtCore/qjsondocument.h \
  /usr/include/qt6/QtCore/qjsonparseerror.h \
@@ -423,4 +427,9 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
  /usr/include/qt6/QtCore/QProcess /usr/include/qt6/QtCore/qprocess.h \
- /usr/include/qt6/QtCore/QRegularExpression
+ /usr/include/qt6/QtCore/QRegularExpression \
+ /usr/include/qt6/QtCore/QStandardPaths \
+ /usr/include/qt6/QtCore/qstandardpaths.h \
+ /usr/include/qt6/QtCore/QTextStream /usr/include/qt6/QtCore/QStorageInfo \
+ /usr/include/qt6/QtCore/qstorageinfo.h /usr/include/qt6/QtCore/QSysInfo \
+ /usr/include/qt6/QtCore/QTimer /usr/include/qt6/QtCore/qtimer.h

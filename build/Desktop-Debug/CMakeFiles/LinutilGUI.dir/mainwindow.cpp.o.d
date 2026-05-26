@@ -368,7 +368,8 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtGui/qinputmethod.h /usr/include/qt6/QtCore/qlocale.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
  /usr/include/qt6/QtWidgets/QCheckBox /usr/include/qt6/QtWidgets/QFrame \
- /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtWidgets/QGroupBox \
+ /usr/include/qt6/QtWidgets/qgroupbox.h /usr/include/qt6/QtWidgets/QLabel \
  /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtGui/qpicture.h \
  /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
@@ -425,4 +426,9 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
  /usr/include/qt6/QtCore/QProcess /usr/include/qt6/QtCore/qprocess.h \
- /usr/include/qt6/QtCore/QRegularExpression
+ /usr/include/qt6/QtCore/QRegularExpression \
+ /usr/include/qt6/QtCore/QStandardPaths \
+ /usr/include/qt6/QtCore/qstandardpaths.h \
+ /usr/include/qt6/QtCore/QTextStream /usr/include/qt6/QtCore/QStorageInfo \
+ /usr/include/qt6/QtCore/qstorageinfo.h /usr/include/qt6/QtCore/QSysInfo \
+ /usr/include/qt6/QtCore/QTimer /usr/include/qt6/QtCore/qtimer.h

@@ -12,6 +12,14 @@
 #include <QMessageBox>
 #include <QProcess>
 #include <QRegularExpression>
+#include <QStandardPaths>
+
+
+#include <QTextStream>
+
+#include <QStorageInfo>
+#include <QSysInfo>
+#include <QTimer>
 
 
 
@@ -21,8 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setFixedSize(900, 629);
+    setFixedSize(1031, 723);
     updateDistroLabel();
+    QTimer::singleShot(0, this, &MainWindow::getSystemData);
 
     ui->statusbar->clearMessage();
 
@@ -106,11 +115,17 @@ void MainWindow::writeLog(const QString &message)
 {
     QString appName = "LinutilGUI";
 
-    QDir dir("logs");
+    // ✅ Correct Linux-safe path
+    QString logDirPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
+    if (logDirPath.isEmpty())
+        logDirPath = QDir::homePath() + "/.local/share/" + appName;
+
+    QDir dir(logDirPath);
     if (!dir.exists())
         dir.mkpath(".");
 
-    QString filePath = "logs/" + appName + ".log";
+    QString filePath = logDirPath + "/app.log";
 
     QFile file(filePath);
     if (!file.open(QIODevice::Append | QIODevice::Text))
@@ -124,7 +139,7 @@ void MainWindow::writeLog(const QString &message)
     out << "[" << timestamp << "] " << message << "\n";
 }
 
-
+// detects OS type
 void MainWindow::updateDistroLabel()
 {
     QFile osFile("/etc/os-release");
@@ -138,6 +153,9 @@ void MainWindow::updateDistroLabel()
 
     if (data.contains("arch") || data.contains("cachyos"))
         ui->DistInfo_Label->setText("Arch / CachyOS");
+
+    else if (data.contains("arch"))
+        ui->DistInfo_Label->setText("Arch");
 
     else if (data.contains("ubuntu") || data.contains("debian"))
         ui->DistInfo_Label->setText("Ubuntu / Debian");
@@ -155,28 +173,40 @@ void MainWindow::updateDistroLabel()
 QString MainWindow::getPackageManager()
 {
     QFile osFile("/etc/os-release");
+
     if (!osFile.open(QIODevice::ReadOnly))
-         writeLog("OS: "  "unknown");
+    {
+        writeLog("OS: unknown (failed to read os-release)");
         return "unknown";
+    }
 
     QString data = osFile.readAll();
 
     if (data.contains("arch") || data.contains("cachyos"))
-         writeLog("OS: "  "pacman");
+    {
+        writeLog("OS detected: Arch/CachyOS");
         return "pacman";
+    }
 
     if (data.contains("ubuntu") || data.contains("debian"))
-
+    {
+        writeLog("OS detected: Ubuntu/Debian");
         return "apt";
+    }
 
     if (data.contains("fedora"))
-
+    {
+        writeLog("OS detected: Fedora");
         return "dnf";
+    }
 
     if (data.contains("opensuse"))
-
+    {
+        writeLog("OS detected: OpenSUSE");
         return "zypper";
+    }
 
+    writeLog("OS detected: unknown");
     return "unknown";
 }
 
@@ -403,4 +433,107 @@ void MainWindow::on_btnUpdateSystem_clicked()
 
     runInTerminal("Updating system packages . . .", {"pacman", "-Syu", "--noconfirm"});
 
+}
+
+void MainWindow::getSystemData()
+{
+    // ---------------- CPU INFO ----------------
+    QString cpu = "Unknown";
+    QProcess cpuProc;
+    cpuProc.start("sh", {"-c", "grep -m1 'model name' /proc/cpuinfo | cut -d: -f2"});
+    cpuProc.waitForFinished(2000);
+    cpu = cpuProc.readAllStandardOutput().trimmed();
+    cpu.remove(QRegularExpression(R"(\(R\)|\(TM\)|CPU\s+)"));
+    cpu = cpu.simplified();
+    if (cpu.isEmpty()) cpu = "Unknown";
+    ui->cpuLabel->setText(cpu);
+
+    // ---------------- CPU CORES / FREQ ----------------
+    int coreCount = 0;
+    double maxFreq = 0.0;
+    QFile cpufreq("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq");
+    if (cpufreq.open(QIODevice::ReadOnly)) {
+        maxFreq = cpufreq.readAll().trimmed().toDouble() / 1000.0; // MHz
+        cpufreq.close();
+    }
+    QFile corefile("/proc/cpuinfo");
+    if (corefile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&corefile);
+        while (!in.atEnd()) {
+            if (in.readLine().startsWith("processor"))
+                coreCount++;
+        }
+    }
+    if (coreCount > 0)
+        cpu += QString(" (%1 cores)").arg(coreCount);
+    if (maxFreq > 0)
+        cpu += QString(" @ %1 MHz").arg(maxFreq, 0, 'f', 0);
+
+    // ---------------- RAM INFO ----------------
+    QString ram = "Unknown";
+    QProcess ramProc;
+    ramProc.start("sh", {"-c",
+                            "awk '/MemTotal/{t=$2} /MemAvailable/{a=$2} END{"
+                            "used=(t-a)/1048576; total=t/1048576; "
+                            "printf \"%.2f GiB / %.2f GiB (%d%%)\", used, total, used/total*100"
+                            "}' /proc/meminfo"
+                        });
+    ramProc.waitForFinished(2000);
+    ram = ramProc.readAllStandardOutput().trimmed();
+    if (ram.isEmpty()) ram = "Unknown";
+
+    // ---------------- DISK INFO ----------------
+    QString disk = "Unknown";
+    QStorageInfo storage = QStorageInfo::root();
+    if (storage.isValid() && storage.isReady()) {
+        double totalGB = storage.bytesTotal() / (1024.0 * 1024 * 1024);
+        double freeGB  = storage.bytesAvailable() / (1024.0 * 1024 * 1024); // bytesAvailable respects reserved blocks
+        double usedGB  = totalGB - freeGB;
+        disk = QString("%1 GB used / %2 GB total (%3% used)")
+                   .arg(usedGB,  0, 'f', 1)
+                   .arg(totalGB, 0, 'f', 1)
+                   .arg((int)(usedGB / totalGB * 100));
+    }
+
+    // ---------------- MOTHERBOARD INFO ----------------
+    QString motherboard = "Unknown";
+    auto readSysFile = [](const QString &path) -> QString {
+        QFile f(path);
+        if (f.open(QIODevice::ReadOnly))
+            return QString(f.readAll()).trimmed();
+        return {};
+    };
+    QString boardVendor = readSysFile("/sys/devices/virtual/dmi/id/board_vendor");
+    QString boardName   = readSysFile("/sys/devices/virtual/dmi/id/board_name");
+    QString boardVer    = readSysFile("/sys/devices/virtual/dmi/id/board_version");
+    if (!boardName.isEmpty())
+        motherboard = QString("%1 %2%3")
+                          .arg(boardVendor)
+                          .arg(boardName)
+                          .arg(boardVer.isEmpty() ? "" : " v" + boardVer)
+                          .trimmed();
+
+    // ---------------- GPU INFO ----------------
+    QString gpu = "Unknown";
+    QProcess gpuProc;
+    gpuProc.start("sh", {"-c",
+                            "lspci | grep -E 'VGA|3D|Display' | sed 's/.*: //' | sed 's/ (rev [0-9a-fA-F]*)//g'"
+                        });
+    gpuProc.waitForFinished(3000);
+    QString gpuOut = gpuProc.readAllStandardOutput().trimmed();
+    if (!gpuOut.isEmpty())
+        gpu = gpuOut.replace('\n', " | ");
+
+    // ---------------- UPDATE UI ----------------
+
+    ui->ramLabel->setText(ram);
+   // ui->diskLabel->setText(disk);
+    ui->mbLabel->setText(motherboard);
+    ui->gpuLabel->setText(gpu);
+
+    qDebug() << "CPU:" << cpu;
+    qDebug() << "RAM:" << ram;
+    qDebug() << "Disk:" << disk;
+    qDebug() << "MB:" << motherboard;
+    qDebug() << "GPU:" << gpu;
 }

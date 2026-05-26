@@ -105,9 +105,6 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/*.cpp")
 set(OLD_GLOB
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/LinutilGUI_autogen/mocs_compilation.cpp"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp"
@@ -164,8 +161,6 @@ endif()
 # _directory_contents at /usr/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/*.h")
 set(OLD_GLOB
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/LinutilGUI_autogen/include/ui_mainwindow.h"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Debug/LinutilGUI_autogen/moc_predefs.h"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/include/ui_mainwindow.h"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/moc_predefs.h"
   "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.h"
