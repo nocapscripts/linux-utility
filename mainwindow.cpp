@@ -244,19 +244,31 @@ QStringList MainWindow::getRemoveCommand(const QString &pkgManager, const QStrin
     return {};
 }
 
-
 bool MainWindow::isInstalled(const QString &package)
 {
-    QProcess p;
-    p.start("pacman", {"-Qi", package});
-
-    if (!p.waitForStarted())
+    if (package.isEmpty())
         return false;
 
-    p.waitForFinished(3000);
+    QProcess p;
+    p.setProgram("pacman");
+    p.setArguments({"-Q", package});
+    p.setProcessChannelMode(QProcess::MergedChannels);
 
-    return p.exitStatus() == QProcess::NormalExit &&
-           p.exitCode() == 0;
+    p.start();
+
+    if (!p.waitForStarted(1500))
+        return false;
+
+    if (!p.waitForFinished(5000))
+        return false;
+
+    // pacman exit codes:
+    // 0 = installed
+    // 1 = not installed
+    // >1 = error
+    const int code = p.exitCode();
+
+    return (p.exitStatus() == QProcess::NormalExit && code == 0);
 }
 
 void MainWindow::showProgress(const QString &message)

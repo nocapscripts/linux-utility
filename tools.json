@@ -32,9 +32,11 @@
   { "checkbox": "chAlacritty", "package": "alacritty" },
   { "checkbox": "chWezterm", "package": "wezterm" },
 
-  { "checkbox": "chPascalNvidia580", "package": "nvidia-580xx-utils"},
-  { "checkbox": "chPascalNvidia470", "package": "nvidia-470xx-utils"},
-  { "checkbox": "chPascalNvidia390", "package": "nvidia-390xx-utils"},
+  { "checkbox": "chNvidiaCurrent", "package": "nvidia" },
+  { "checkbox": "chNvidiaOpen", "package": "nvidia-open" },
+  { "checkbox": "chLegacyNvidia580", "package": "nvidia-580xx-dkms"},
+  { "checkbox": "chLegacyNvidia470", "package": "nvidia-470xx-dkms"},
+  { "checkbox": "chLegacyNvidia390", "package": "nvidia-390xx-dkms"},
 
   { "checkbox": "chNODEJS", "package": "nodejs" }
 
