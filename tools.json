@@ -1,27 +1,34 @@
 [
-    { "checkbox": "chBrave",     "package": "brave-bin" },
-    { "checkbox": "chFirefox",   "package": "firefox" },
-    { "checkbox": "chChromium",  "package": "chromium" },
-    { "checkbox": "chOpera",     "package": "opera" },
+  { "checkbox": "chBrave", "package": "brave" },
+  { "checkbox": "chFirefox", "package": "firefox" },
+  { "checkbox": "chChromium", "package": "chromium" },
+  { "checkbox": "chOpera", "package": "opera" },
 
-    { "checkbox": "chCode",      "package": "code" },
-    { "checkbox": "chZed",       "package": "zed" },
-    { "checkbox": "chVSCodium",  "package": "vscodium-bin" },
-    { "checkbox": "chNeovim",    "package": "neovim" },
+  { "checkbox": "chCode", "package": "code" },
+  { "checkbox": "chZed", "package": "zed" },
+  { "checkbox": "chVSCodium", "package": "vscodium" },
+  { "checkbox": "chNeovim", "package": "neovim" },
 
-    { "checkbox": "chDiscord",   "package": "discord" },
-    { "checkbox": "chTelegram",  "package": "telegram-desktop" },
-    { "checkbox": "chSpotify",   "package": "spotify-launcher" },
+  { "checkbox": "chDiscord", "package": "discord" },
+  { "checkbox": "chTelegram", "package": "telegram-desktop" },
+  { "checkbox": "chSpotify", "package": "spotify-launcher" },
 
-    { "checkbox": "chSteam",     "package": "steam" },
-    { "checkbox": "chLutris",    "package": "lutris" },
-    { "checkbox": "chHeroic",    "package": "heroic-games-launcher-bin" },
+  { "checkbox": "chSteam", "package": "steam" },
+  { "checkbox": "chLutris", "package": "lutris" },
+  { "checkbox": "chHeroic", "package": "heroic-games-launcher" },
 
-    { "checkbox": "chGIMP",      "package": "gimp" },
-    { "checkbox": "chKrita",     "package": "krita" },
-    { "checkbox": "chInkscape",  "package": "inkscape" },
+  { "checkbox": "chGIMP", "package": "gimp" },
+  { "checkbox": "chKrita", "package": "krita" },
+  { "checkbox": "chInkscape", "package": "inkscape" },
 
-    { "checkbox": "chOBS",       "package": "obs-studio" },
-    { "checkbox": "chVLC",       "package": "vlc" },
-    { "checkbox": "chKdenlive",  "package": "kdenlive" }
+  { "checkbox": "chOBS", "package": "obs-studio" },
+  { "checkbox": "chVLC", "package": "vlc" },
+  { "checkbox": "chKdenlive", "package": "kdenlive" },
+
+  { "checkbox": "chKonsole", "package": "konsole" },
+  { "checkbox": "chGnomeTerm", "package": "gnome-terminal" },
+  { "checkbox": "chXfce", "package": "xfce4-terminal" },
+  { "checkbox": "chKitty", "package": "kitty" },
+  { "checkbox": "chAlacritty", "package": "alacritty" },
+  { "checkbox": "chWezterm", "package": "wezterm" }
 ]

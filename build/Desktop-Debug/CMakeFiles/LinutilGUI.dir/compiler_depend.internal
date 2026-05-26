@@ -2199,6 +2199,7 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o
  /usr/include/math.h
  /usr/include/pthread.h
  /usr/include/qt6/QtCore/QDebug
+ /usr/include/qt6/QtCore/QDir
  /usr/include/qt6/QtCore/QFile
  /usr/include/qt6/QtCore/QJsonArray
  /usr/include/qt6/QtCore/QJsonDocument
@@ -2255,11 +2256,14 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o
  /usr/include/qt6/QtCore/qdatetime.h
  /usr/include/qt6/QtCore/qdeadlinetimer.h
  /usr/include/qt6/QtCore/qdebug.h
+ /usr/include/qt6/QtCore/qdir.h
+ /usr/include/qt6/QtCore/qdirlisting.h
  /usr/include/qt6/QtCore/qendian.h
  /usr/include/qt6/QtCore/qeventloop.h
  /usr/include/qt6/QtCore/qexceptionhandling.h
  /usr/include/qt6/QtCore/qfile.h
  /usr/include/qt6/QtCore/qfiledevice.h
+ /usr/include/qt6/QtCore/qfileinfo.h
  /usr/include/qt6/QtCore/qflags.h
  /usr/include/qt6/QtCore/qfloat16.h
  /usr/include/qt6/QtCore/qforeach.h
@@ -2341,6 +2345,7 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o
  /usr/include/qt6/QtCore/qtenvironmentvariables.h
  /usr/include/qt6/QtCore/qtextstream.h
  /usr/include/qt6/QtCore/qtformat_impl.h
+ /usr/include/qt6/QtCore/qtimezone.h
  /usr/include/qt6/QtCore/qtmetamacros.h
  /usr/include/qt6/QtCore/qtnoop.h
  /usr/include/qt6/QtCore/qtpreprocessorsupport.h

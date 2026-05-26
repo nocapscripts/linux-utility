@@ -5,6 +5,7 @@
 #include <QCheckBox>
 #include <QDebug>
 #include <QFile>
+#include <QDir>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -93,10 +94,37 @@ MainWindow::MainWindow(QWidget *parent)
     }
 }
 
+
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+void MainWindow::writeLog(const QString &message)
+{
+    QString appName = "LinutilGUI";
+
+    QDir dir("logs");
+    if (!dir.exists())
+        dir.mkpath(".");
+
+    QString filePath = "logs/" + appName + ".log";
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::Append | QIODevice::Text))
+        return;
+
+    QTextStream out(&file);
+
+    QString timestamp = QDateTime::currentDateTime()
+                            .toString("yyyy-MM-dd HH:mm:ss");
+
+    out << "[" << timestamp << "] " << message << "\n";
+}
+
+
 void MainWindow::updateDistroLabel()
 {
     QFile osFile("/etc/os-release");
@@ -128,13 +156,13 @@ QString MainWindow::getPackageManager()
 {
     QFile osFile("/etc/os-release");
     if (!osFile.open(QIODevice::ReadOnly))
-
+         writeLog("OS: "  "unknown");
         return "unknown";
 
     QString data = osFile.readAll();
 
     if (data.contains("arch") || data.contains("cachyos"))
-
+         writeLog("OS: "  "pacman");
         return "pacman";
 
     if (data.contains("ubuntu") || data.contains("debian"))

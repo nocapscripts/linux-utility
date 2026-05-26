@@ -2194,6 +2194,7 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: /mnt/Sten/Stuff/LinutilGUI/LinutilGU
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDebug \
+  /usr/include/qt6/QtCore/QDir \
   /usr/include/qt6/QtCore/QFile \
   /usr/include/qt6/QtCore/QJsonArray \
   /usr/include/qt6/QtCore/QJsonDocument \
@@ -2250,11 +2251,14 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: /mnt/Sten/Stuff/LinutilGUI/LinutilGU
   /usr/include/qt6/QtCore/qdatetime.h \
   /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
+  /usr/include/qt6/QtCore/qdir.h \
+  /usr/include/qt6/QtCore/qdirlisting.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qeventloop.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
   /usr/include/qt6/QtCore/qfile.h \
   /usr/include/qt6/QtCore/qfiledevice.h \
+  /usr/include/qt6/QtCore/qfileinfo.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -2336,6 +2340,7 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: /mnt/Sten/Stuff/LinutilGUI/LinutilGU
   /usr/include/qt6/QtCore/qtenvironmentvariables.h \
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
+  /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
   /usr/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -2533,8 +2538,6 @@ CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o:
 
 /usr/lib/libexpat.so.1:
 
-/usr/lib/libdbus-1.so.3:
-
 /usr/lib/libbz2.so.1.0:
 
 /usr/lib/libbrotlidec.so.1:
@@ -2594,6 +2597,10 @@ CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o:
 /usr/lib/libc_nonshared.a:
 
 /usr/include/qt6/QtCore/qfiledevice.h:
+
+/usr/lib/libdbus-1.so.3:
+
+/usr/include/qt6/QtCore/qdirlisting.h:
 
 /usr/include/qt6/QtCore/QVariant:
 
@@ -3565,6 +3572,8 @@ CMakeFiles/4.3.3/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake:
 
+/usr/include/qt6/QtCore/qfileinfo.h:
+
 /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h:
 
 /usr/lib/libOpenGL.so:
@@ -3752,6 +3761,8 @@ CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o:
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/qtcoreexports.h:
+
+/usr/include/qt6/QtCore/qtimezone.h:
 
 /usr/include/c++/16.1.1/type_traits:
 
@@ -4145,6 +4156,8 @@ LinutilGUI_autogen/moc_predefs.h:
 
 /usr/include/pthread.h:
 
+/usr/include/qt6/QtCore/QDir:
+
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginConfig.cmake:
 
 /usr/include/qt6/QtCore/q20functional.h:
@@ -4354,6 +4367,8 @@ LinutilGUI_autogen/moc_predefs.h:
 /usr/include/qt6/QtCore/qswap.h:
 
 /usr/include/qt6/QtCore/qsysinfo.h:
+
+/usr/include/qt6/QtCore/qdir.h:
 
 /usr/include/bits/iscanonical.h:
 

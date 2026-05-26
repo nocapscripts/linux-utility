@@ -23,6 +23,7 @@ private slots:
     void on_btnDisablePAM_clicked();
     void on_btnRestorePAM_clicked();
     void on_btnUpdateSystem_clicked();
+    void writeLog(const QString& txt);
     void updateDistroLabel();
     void onCheckboxToggled(QCheckBox* checkbox, const QString& package, bool checked);
 
