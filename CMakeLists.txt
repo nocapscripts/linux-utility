@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
-project(LinutilGUI VERSION 1.0.0 LANGUAGES CXX)
+project(LinutilGUI VERSION 1.0.12 LANGUAGES CXX)
+add_compile_definitions(APP_VERSION="${PROJECT_VERSION}")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)

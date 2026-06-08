@@ -21,6 +21,7 @@ public:
 
 private slots:
     void on_btnDisablePAM_clicked();
+    void on_btnCleanCache_clicked();
     void on_btnRestorePAM_clicked();
     void on_btnUpdateSystem_clicked();
     void on_btnOpenLogs_clicked();

@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setFixedSize(1031, 723);
     updateDistroLabel();
+    ui->appVersion->setText(QString("App Version: ") + APP_VERSION);
     QTimer::singleShot(0, this, &MainWindow::getSystemData);
 
     // Show warning after the window is visible
@@ -436,7 +437,7 @@ void MainWindow::runInTerminal(const QString &txt, const QStringList &args)
     }
 
     p->start(terminal, terminalArgs);
-
+    writeLog("Terminal process started in " + terminal);
     ui->statusbar->showMessage(txt + " launched in " + terminal);
 }
 
@@ -704,4 +705,15 @@ void MainWindow::on_btnOpenLogs_clicked()
     writeLog("Opening logs folder");
     QString logDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDesktopServices::openUrl(QUrl::fromLocalFile(logDir));
+}
+
+
+void MainWindow::on_btnCleanCache_clicked()
+{
+    // clean package manager pacman cache
+    writeLog("Cleaning pacman cache");
+    //QProcess cleanProccess;
+    runInTerminal("Cleaning pacman cache . . .", {"sudo", "pacman", "-Scc"});
+    writeLog("Pacman cache cleaned");
+
 }

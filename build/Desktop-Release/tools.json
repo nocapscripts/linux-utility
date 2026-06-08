@@ -2,7 +2,6 @@
   { "checkbox": "chBrave", "package": "brave" },
   { "checkbox": "chFirefox", "package": "firefox" },
   { "checkbox": "chChromium", "package": "chromium" },
-  { "checkbox": "chOpera", "package": "opera" },
 
   { "checkbox": "chCode", "package": "code" },
   { "checkbox": "chZed", "package": "zed" },
@@ -34,14 +33,14 @@
 
   { "checkbox": "chNvidiaCurrent", "package": "nvidia" },
   { "checkbox": "chNvidiaOpen", "package": "nvidia-open" },
-  { "checkbox": "chLegacyNvidia580", "package": "nvidia-580xx-dkms"},
-  { "checkbox": "chLegacyNvidia470", "package": "nvidia-470xx-dkms"},
-  { "checkbox": "chLegacyNvidia390", "package": "nvidia-390xx-dkms"},
+  { "checkbox": "chLegacyNvidia580", "package": "nvidia-580xx-dkms" },
+  { "checkbox": "chLegacyNvidia470", "package": "nvidia-470xx-dkms" },
+  { "checkbox": "chLegacyNvidia390", "package": "nvidia-390xx-dkms" },
 
   { "checkbox": "chNODEJS", "package": "nodejs" },
 
-  { "checkbox": "chIntelGPU", "package": "mesa" }
+  { "checkbox": "chIntelGPU", "package": "mesa" },
 
-
-
+  { "checkbox": "chRufus", "package": "rufus-linux" },
+  { "checkbox": "chPeaZip", "package": "peazip" }
 ]

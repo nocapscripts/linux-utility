@@ -35,7 +35,6 @@ public:
     QCheckBox *chBrave;
     QCheckBox *chFirefox;
     QCheckBox *chChromium;
-    QCheckBox *chOpera;
     QWidget *tab_5;
     QFrame *frame_3;
     QCheckBox *chCode;
@@ -76,6 +75,8 @@ public:
     QCheckBox *chKdenlive;
     QCheckBox *chVLC;
     QCheckBox *chInkscape;
+    QCheckBox *chRufus;
+    QCheckBox *chPeaZip;
     QWidget *tab_2;
     QFrame *frame_6;
     QFrame *frame;
@@ -85,6 +86,7 @@ public:
     QFrame *frame_10;
     QPushButton *btnUpdateSystem;
     QLabel *label_2;
+    QPushButton *btnCleanCache;
     QWidget *tab_3;
     QFrame *frame_7;
     QFrame *frame_12;
@@ -100,6 +102,7 @@ public:
     QLabel *ramLabel;
     QLabel *gpuLabel;
     QPushButton *btnOpenLogs;
+    QLabel *appVersion;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -233,10 +236,6 @@ public:
         chChromium->setObjectName("chChromium");
         chChromium->setGeometry(QRect(10, 70, 201, 21));
         chChromium->setFont(font);
-        chOpera = new QCheckBox(frame_4);
-        chOpera->setObjectName("chOpera");
-        chOpera->setGeometry(QRect(10, 100, 201, 21));
-        chOpera->setFont(font);
         tabWidget_2->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName("tab_5");
@@ -812,6 +811,14 @@ public:
         chInkscape->setObjectName("chInkscape");
         chInkscape->setGeometry(QRect(10, 130, 201, 23));
         chInkscape->setFont(font);
+        chRufus = new QCheckBox(frame_9);
+        chRufus->setObjectName("chRufus");
+        chRufus->setGeometry(QRect(10, 160, 201, 23));
+        chRufus->setFont(font);
+        chPeaZip = new QCheckBox(frame_9);
+        chPeaZip->setObjectName("chPeaZip");
+        chPeaZip->setGeometry(QRect(10, 190, 201, 23));
+        chPeaZip->setFont(font);
         tabWidget_2->addTab(tab_8, QString());
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
@@ -987,7 +994,7 @@ public:
         btnRestorePAM->setGeometry(QRect(10, 80, 161, 31));
         frame_10 = new QFrame(frame_6);
         frame_10->setObjectName("frame_10");
-        frame_10->setGeometry(QRect(200, 0, 181, 671));
+        frame_10->setGeometry(QRect(200, 0, 191, 671));
         QPalette palette9;
         palette9.setBrush(QPalette::ColorGroup::Active, QPalette::ColorRole::WindowText, brush);
         palette9.setBrush(QPalette::ColorGroup::Active, QPalette::ColorRole::Button, brush11);
@@ -1058,11 +1065,14 @@ public:
         frame_10->setFrameShadow(QFrame::Shadow::Raised);
         btnUpdateSystem = new QPushButton(frame_10);
         btnUpdateSystem->setObjectName("btnUpdateSystem");
-        btnUpdateSystem->setGeometry(QRect(10, 40, 161, 31));
+        btnUpdateSystem->setGeometry(QRect(10, 40, 171, 31));
         label_2 = new QLabel(frame_10);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(10, 10, 161, 20));
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        btnCleanCache = new QPushButton(frame_10);
+        btnCleanCache->setObjectName("btnCleanCache");
+        btnCleanCache->setGeometry(QRect(10, 80, 171, 31));
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName("tab_3");
@@ -1435,6 +1445,10 @@ public:
         btnOpenLogs->setObjectName("btnOpenLogs");
         btnOpenLogs->setGeometry(QRect(440, 640, 96, 27));
         btnOpenLogs->setAutoDefault(false);
+        appVersion = new QLabel(frame_7);
+        appVersion->setObjectName("appVersion");
+        appVersion->setGeometry(QRect(870, 620, 161, 20));
+        appVersion->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tabWidget->addTab(tab_3, QString());
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -1444,7 +1458,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(2);
-        tabWidget_2->setCurrentIndex(2);
+        tabWidget_2->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1456,7 +1470,6 @@ public:
         chBrave->setText(QCoreApplication::translate("MainWindow", "Brave Browser", nullptr));
         chFirefox->setText(QCoreApplication::translate("MainWindow", "Firefox", nullptr));
         chChromium->setText(QCoreApplication::translate("MainWindow", "Chromium", nullptr));
-        chOpera->setText(QCoreApplication::translate("MainWindow", "Opera Browser", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QCoreApplication::translate("MainWindow", "The browsers", nullptr));
         chCode->setText(QCoreApplication::translate("MainWindow", "Visual Studio Code", nullptr));
         chZed->setText(QCoreApplication::translate("MainWindow", "Zed Studio", nullptr));
@@ -1491,6 +1504,8 @@ public:
         chKdenlive->setText(QCoreApplication::translate("MainWindow", "Kdenlive", nullptr));
         chVLC->setText(QCoreApplication::translate("MainWindow", "VLC Player", nullptr));
         chInkscape->setText(QCoreApplication::translate("MainWindow", "Inkscape", nullptr));
+        chRufus->setText(QCoreApplication::translate("MainWindow", "Rufus (AUR)", nullptr));
+        chPeaZip->setText(QCoreApplication::translate("MainWindow", "PeaZip (AUR)", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Misc", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Applications", nullptr));
         btnDisablePAM->setText(QCoreApplication::translate("MainWindow", "Disable Lockout", nullptr));
@@ -1498,6 +1513,7 @@ public:
         btnRestorePAM->setText(QCoreApplication::translate("MainWindow", "Restore Lockout", nullptr));
         btnUpdateSystem->setText(QCoreApplication::translate("MainWindow", "Update System", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "System related", nullptr));
+        btnCleanCache->setText(QCoreApplication::translate("MainWindow", "Clean Package Cache", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Tweaks", nullptr));
 #if QT_CONFIG(statustip)
         frame_12->setStatusTip(QString());
@@ -1516,6 +1532,7 @@ public:
         ramLabel->setText(QString());
         gpuLabel->setText(QString());
         btnOpenLogs->setText(QCoreApplication::translate("MainWindow", " Logs Dir", nullptr));
+        appVersion->setText(QCoreApplication::translate("MainWindow", "Version: 1.0.12", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "System", nullptr));
     } // retranslateUi
 

@@ -49,7 +49,7 @@
        <enum>QTabWidget::TabPosition::North</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <property name="elideMode">
        <enum>Qt::TextElideMode::ElideNone</enum>
@@ -606,24 +606,6 @@
          </property>
          <property name="text">
           <string>Chromium</string>
-         </property>
-        </widget>
-        <widget class="QCheckBox" name="chOpera">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>100</y>
-           <width>201</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Opera Browser</string>
          </property>
         </widget>
        </widget>
@@ -4155,6 +4137,42 @@
           <string>Inkscape</string>
          </property>
         </widget>
+        <widget class="QCheckBox" name="chRufus">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>160</y>
+           <width>201</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Rufus (AUR)</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chPeaZip">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>190</y>
+           <width>201</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>PeaZip (AUR)</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -5194,7 +5212,7 @@
         <rect>
          <x>200</x>
          <y>0</y>
-         <width>181</width>
+         <width>191</width>
          <height>671</height>
         </rect>
        </property>
@@ -5681,7 +5699,7 @@
          <rect>
           <x>10</x>
           <y>40</y>
-          <width>161</width>
+          <width>171</width>
           <height>31</height>
          </rect>
         </property>
@@ -5703,6 +5721,19 @@
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnCleanCache">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Clean Package Cache</string>
         </property>
        </widget>
       </widget>
@@ -7925,6 +7956,22 @@
        </property>
        <property name="autoDefault">
         <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="appVersion">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>620</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Version: 1.0.12</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </widget>
