@@ -30,25 +30,27 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     setFixedSize(1031, 723);
     updateDistroLabel();
     QTimer::singleShot(0, this, &MainWindow::getSystemData);
 
+    // Show warning after the window is visible
+    QTimer::singleShot(0, this, [this]() {
+        QMessageBox::warning(this, "Warning",
+                             "This app is currently unstable and usable only on Arch Linux systems.\n"
+                             "It will not work on any other systems.\n\n"
+                             "If you encounter any problems, please report them at:\n"
+                             "https://github.com/nocapscripts/linux-utility/issues");
+    });
+
     ui->statusbar->clearMessage();
 
     QFile file(":/tools.json");
-
     if (!file.open(QIODevice::ReadOnly)) {
         file.setFileName("tools.json");
-
         if (!file.open(QIODevice::ReadOnly)) {
-            QMessageBox::critical(
-                this,
-                "Error",
-                "Could not open tools.json"
-                );
-                writeLog("Error tools.json File not open or not found");
+            writeLog("Error: tools.json not found or could not be opened");
+            QMessageBox::critical(this, "Error", "Could not open tools.json");
             return;
         }
     }
@@ -60,20 +62,14 @@ MainWindow::MainWindow(QWidget *parent)
     QJsonDocument doc = QJsonDocument::fromJson(data, &err);
 
     if (err.error != QJsonParseError::NoError) {
-        QMessageBox::critical(
-            this,
-            "JSON Error",
-            err.errorString()
-            );
+        writeLog("Error: JSON parse error: " + err.errorString());
+        QMessageBox::critical(this, "JSON Error", err.errorString());
         return;
     }
 
     if (!doc.isArray()) {
-        QMessageBox::critical(
-            this,
-            "Error",
-            "tools.json must be a JSON array"
-            );
+        writeLog("Error: tools.json is not a JSON array");
+        QMessageBox::critical(this, "Error", "tools.json must be a JSON array");
         return;
     }
 
@@ -85,18 +81,26 @@ MainWindow::MainWindow(QWidget *parent)
             continue;
 
         QJsonObject obj = it->toObject();
-
         QString checkboxName = obj["checkbox"].toString();
         QString packageName  = obj["package"].toString();
+        QString labelName    = obj["label"].toString();   // optional in tools.json
 
         QCheckBox *checkbox = findChild<QCheckBox*>(checkboxName);
-
         if (!checkbox) {
             qWarning() << "Checkbox not found:" << checkboxName;
+            writeLog("Warning: checkbox not found: " + checkboxName);
             continue;
         }
 
-        checkbox->setChecked(isInstalled(packageName));
+        QLabel *label = findChild<QLabel*>(labelName);   // null if not found, handled safely
+
+        bool installed = isInstalled(packageName);
+        checkbox->blockSignals(true);
+        checkbox->setChecked(installed);
+        checkbox->blockSignals(false);
+
+        if (label)
+            label->setStyleSheet(installed ? "color: #4caf50; font-weight: bold;" : "");
 
         connect(checkbox, &QCheckBox::toggled, this,
                 [this, checkbox, packageName](bool checked)
