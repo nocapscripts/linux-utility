@@ -54,6 +54,7 @@ public:
     QCheckBox *chLegacyNvidia390;
     QCheckBox *chNvidiaCurrent;
     QCheckBox *chNvidiaOpen;
+    QCheckBox *chIntelGPU;
     QWidget *tab_7;
     QFrame *frame_5;
     QCheckBox *chSpotify;
@@ -98,6 +99,7 @@ public:
     QLabel *mbLabel;
     QLabel *ramLabel;
     QLabel *gpuLabel;
+    QPushButton *btnOpenLogs;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -515,6 +517,10 @@ public:
         chNvidiaOpen->setObjectName("chNvidiaOpen");
         chNvidiaOpen->setGeometry(QRect(10, 40, 191, 23));
         chNvidiaOpen->setFont(font);
+        chIntelGPU = new QCheckBox(frame_14);
+        chIntelGPU->setObjectName("chIntelGPU");
+        chIntelGPU->setGeometry(QRect(10, 160, 191, 23));
+        chIntelGPU->setFont(font);
         tabWidget_2->addTab(tab_6, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName("tab_7");
@@ -1425,6 +1431,10 @@ public:
         gpuLabel->setFont(font3);
         gpuLabel->setTextFormat(Qt::TextFormat::AutoText);
         gpuLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        btnOpenLogs = new QPushButton(frame_7);
+        btnOpenLogs->setObjectName("btnOpenLogs");
+        btnOpenLogs->setGeometry(QRect(440, 640, 96, 27));
+        btnOpenLogs->setAutoDefault(false);
         tabWidget->addTab(tab_3, QString());
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -1433,7 +1443,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
         tabWidget_2->setCurrentIndex(2);
 
 
@@ -1462,6 +1472,7 @@ public:
         chLegacyNvidia390->setText(QCoreApplication::translate("MainWindow", "NVIDIA Driver 390", nullptr));
         chNvidiaCurrent->setText(QCoreApplication::translate("MainWindow", "NVIDIA Current", nullptr));
         chNvidiaOpen->setText(QCoreApplication::translate("MainWindow", "NVIDIA Open", nullptr));
+        chIntelGPU->setText(QCoreApplication::translate("MainWindow", "Intel GPU", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QCoreApplication::translate("MainWindow", "Gaming", nullptr));
         chSpotify->setText(QCoreApplication::translate("MainWindow", "Spotify", nullptr));
         chDiscord->setText(QCoreApplication::translate("MainWindow", "Discord", nullptr));
@@ -1504,6 +1515,7 @@ public:
         mbLabel->setText(QString());
         ramLabel->setText(QString());
         gpuLabel->setText(QString());
+        btnOpenLogs->setText(QCoreApplication::translate("MainWindow", " Logs Dir", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "System", nullptr));
     } // retranslateUi
 

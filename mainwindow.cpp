@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include <QDesktopServices>
+#include <QUrl>
 #include <QApplication>
 #include <QCheckBox>
 #include <QDebug>
@@ -14,7 +16,7 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 
-
+#include <QInputDialog>
 #include <QTextStream>
 
 #include <QStorageInfo>
@@ -46,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
                 "Error",
                 "Could not open tools.json"
                 );
+                writeLog("Error tools.json File not open or not found");
             return;
         }
     }
@@ -110,16 +113,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::writeLog(const QString &message)
 {
-    QString appName = "LinutilGUI";
-
-    // ✅ Correct Linux-safe path
     QString logDirPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
     if (logDirPath.isEmpty())
-        logDirPath = QDir::homePath() + "/.local/share/" + appName;
+        logDirPath = QDir::homePath() + "/.local/share/LinutilGUI";
 
     QDir dir(logDirPath);
     if (!dir.exists())
@@ -128,15 +127,17 @@ void MainWindow::writeLog(const QString &message)
     QString filePath = logDirPath + "/app.log";
 
     QFile file(filePath);
-    if (!file.open(QIODevice::Append | QIODevice::Text))
+    if (!file.open(QIODevice::Append | QIODevice::Text)) {
+        qWarning() << "Failed to open log file:" << filePath;
         return;
+    }
 
     QTextStream out(&file);
+    out << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] "
+        << message << "\n";
 
-    QString timestamp = QDateTime::currentDateTime()
-                            .toString("yyyy-MM-dd HH:mm:ss");
-
-    out << "[" << timestamp << "] " << message << "\n";
+    out.flush();
+    file.close();
 }
 
 // detects OS type
@@ -210,37 +211,109 @@ QString MainWindow::getPackageManager()
     return "unknown";
 }
 
+
+QString MainWindow::detectPackageManager()
+{
+    #ifdef Q_OS_LINUX
+        if (!QStandardPaths::findExecutable("pacman").isEmpty())
+            writeLog("Package manager: PACMAN");
+            return "pacman";
+
+        if (!QStandardPaths::findExecutable("yay").isEmpty())
+            writeLog("Package manager: YAY");
+            return "yay";
+
+        if (!QStandardPaths::findExecutable("apt").isEmpty())
+            writeLog("Package manager: APT");
+            return "apt";
+
+        if (!QStandardPaths::findExecutable("dnf").isEmpty())
+            writeLog("Package manager: DNF");
+            return "dnf";
+
+        if (!QStandardPaths::findExecutable("zypper").isEmpty())
+            writeLog("Package manager: ZYPPER");
+            return "zypper";
+    #endif
+
+    return "pacman"; // safe fallback for Arch-based systems
+}
+
+QString MainWindow::choosePackageManager()
+{
+    QStringList managers = {
+        "pacman",
+        "yay",
+        "apt",
+        "dnf",
+        "zypper"
+    };
+
+    bool ok;
+    QString choice = QInputDialog::getItem(
+        this,
+        "Select Package Manager",
+        "Choose how to install this package:",
+        managers,
+        0,
+        false,
+        &ok
+        );
+    writeLog("Choosed package manager: " + choice);
+    // If user cancels → fallback to system default
+    if (!ok || choice.isEmpty())
+        return detectPackageManager();
+
+    return choice;
+}
+
 QStringList MainWindow::getInstallCommand(const QString &pkgManager, const QString &package)
 {
-    if (pkgManager == "pacman")
+    if (pkgManager == "pacman") {
+        writeLog("Install command: pacman -Sy --noconfirm " + package);
         return {"pacman", "-Sy", "--noconfirm", package};
-
-    if (pkgManager == "apt")
+    }
+    if (pkgManager == "apt") {
+        writeLog("Install command: apt install -y " + package);
         return {"apt", "install", "-y", package};
-
-    if (pkgManager == "dnf")
+    }
+    if (pkgManager == "dnf") {
+        writeLog("Install command: dnf install -y " + package);
         return {"dnf", "install", "-y", package};
-
-    if (pkgManager == "zypper")
+    }
+    if (pkgManager == "zypper") {
+        writeLog("Install command: zypper --non-interactive install " + package);
         return {"zypper", "--non-interactive", "install", package};
+    }
 
+    writeLog("Install command: unknown package manager: " + pkgManager);
     return {};
 }
 
 QStringList MainWindow::getRemoveCommand(const QString &pkgManager, const QString &package)
 {
-    if (pkgManager == "pacman")
+    if (pkgManager == "pacman") {
+        writeLog("Remove command: pacman -Rs --noconfirm " + package);
         return {"pacman", "-Rs", "--noconfirm", package};
-
-    if (pkgManager == "apt")
+    }
+    if (pkgManager == "yay") {
+        writeLog("Remove command: yay -Rns --noconfirm " + package);
+        return {"yay", "-Rns", "--noconfirm", package};
+    }
+    if (pkgManager == "apt") {
+        writeLog("Remove command: apt remove -y " + package);
         return {"apt", "remove", "-y", package};
-
-    if (pkgManager == "dnf")
+    }
+    if (pkgManager == "dnf") {
+        writeLog("Remove command: dnf remove -y " + package);
         return {"dnf", "remove", "-y", package};
-
-    if (pkgManager == "zypper")
+    }
+    if (pkgManager == "zypper") {
+        writeLog("Remove command: zypper --non-interactive remove " + package);
         return {"zypper", "--non-interactive", "remove", package};
+    }
 
+    writeLog("Remove command: unknown package manager: " + pkgManager);
     return {};
 }
 
@@ -365,7 +438,8 @@ void MainWindow::runInTerminal(const QString &txt, const QStringList &args)
 
 void MainWindow::runWithProgress(
     const QString &statusMsg,
-    const QStringList &args)
+    const QStringList &args,
+    std::function<void(bool)> onFinished)
 {
     showProgress(statusMsg);
 
@@ -375,9 +449,11 @@ void MainWindow::runWithProgress(
     connect(process,
             QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this,
-            [this, process, statusMsg](int exitCode, QProcess::ExitStatus)
+            [this, process, statusMsg, onFinished](int exitCode, QProcess::ExitStatus)
             {
-                if (exitCode == 0) {
+                bool ok = (exitCode == 0);
+
+                if (ok) {
                     ui->statusbar->showMessage(statusMsg + " done");
                 } else {
                     QMessageBox::warning(
@@ -390,28 +466,38 @@ void MainWindow::runWithProgress(
 
                 hideProgress();
                 process->deleteLater();
+
+                if (onFinished)
+                    onFinished(ok);
             });
 
     connect(process, &QProcess::errorOccurred,
             this,
-            [this, process](QProcess::ProcessError)
+            [this, process, onFinished](QProcess::ProcessError)
             {
                 QMessageBox::warning(
                     this,
                     "Process Error",
                     process->errorString()
                     );
-
+                    writeLog("Process error: " +  process->errorString()); // works or not ?
                 hideProgress();
                 process->deleteLater();
+
+                if (onFinished)
+                    onFinished(false);  // also fire callback on error
             });
 
     process->start("pkexec", args);
 }
 
+// Now it needs a feature that updates tools checklist after package is installed
 void MainWindow::installPackage(const QString &package)
 {
-    QString pm = getPackageManager();
+    QString pm = choosePackageManager();
+
+    if (pm.isEmpty())
+        pm = getPackageManager(); // system default
 
     runWithProgress(
         "Installing " + package + "...",
@@ -434,16 +520,33 @@ void MainWindow::onCheckboxToggled(
     const QString &package,
     bool checked)
 {
-    checkbox->blockSignals(true);
+    checkbox->setEnabled(false);
 
-    if (checked)
-        installPackage(package);
-    else
-        removePackage(package);
+    auto refresh = [this, checkbox, package](bool /*success*/) {
+        bool installed = isInstalled(package);
+        checkbox->blockSignals(true);
+        checkbox->setChecked(installed);
+        checkbox->blockSignals(false);
+        checkbox->setEnabled(true);
+    };
 
-    checkbox->setChecked(isInstalled(package));
+    QString pm = choosePackageManager();
+    if (pm.isEmpty())
+        pm = getPackageManager();
 
-    checkbox->blockSignals(false);
+    if (checked) {
+        runWithProgress(
+            "Installing " + package + "...",
+            getInstallCommand(pm, package),
+            refresh          // ← called when the process exits
+        );
+    } else {
+        runWithProgress(
+            "Removing " + package + "...",
+            getRemoveCommand(pm, package),
+            refresh
+        );
+    }
 }
 
 
@@ -581,7 +684,20 @@ void MainWindow::getSystemData()
 
     qDebug() << "CPU:" << cpu;
     qDebug() << "RAM:" << ram;
-    qDebug() << "Disk:" << disk;
     qDebug() << "MB:" << motherboard;
     qDebug() << "GPU:" << gpu;
+
+    writeLog("CPU: " + cpu);
+    writeLog("Motherboard: " + motherboard);
+    writeLog("GPU: " + gpu);
+    writeLog("RAM: " + ram);
+
+
+}
+
+void MainWindow::on_btnOpenLogs_clicked()
+{
+    writeLog("Opening logs folder");
+    QString logDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDesktopServices::openUrl(QUrl::fromLocalFile(logDir));
 }

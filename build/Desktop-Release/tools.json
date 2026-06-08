@@ -38,7 +38,9 @@
   { "checkbox": "chLegacyNvidia470", "package": "nvidia-470xx-dkms"},
   { "checkbox": "chLegacyNvidia390", "package": "nvidia-390xx-dkms"},
 
-  { "checkbox": "chNODEJS", "package": "nodejs" }
+  { "checkbox": "chNODEJS", "package": "nodejs" },
+
+  { "checkbox": "chIntelGPU", "package": "mesa" }
 
 
 

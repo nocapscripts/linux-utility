@@ -380,6 +380,8 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QStatusBar \
  /usr/include/qt6/QtWidgets/qstatusbar.h \
  /usr/include/qt6/QtWidgets/QTabWidget /usr/include/qt6/QtWidgets/QWidget \
+ /usr/include/qt6/QtGui/QDesktopServices \
+ /usr/include/qt6/QtGui/qdesktopservices.h /usr/include/qt6/QtCore/QUrl \
  /usr/include/qt6/QtWidgets/QApplication /usr/include/qt6/QtCore/QDebug \
  /usr/include/qt6/QtCore/QFile /usr/include/qt6/QtCore/qfile.h \
  /usr/include/qt6/QtCore/qfiledevice.h /usr/include/c++/16.1.1/filesystem \
@@ -430,6 +432,12 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtCore/QRegularExpression \
  /usr/include/qt6/QtCore/QStandardPaths \
  /usr/include/qt6/QtCore/qstandardpaths.h \
- /usr/include/qt6/QtCore/QTextStream /usr/include/qt6/QtCore/QStorageInfo \
+ /usr/include/qt6/QtWidgets/QInputDialog \
+ /usr/include/qt6/QtWidgets/qinputdialog.h \
+ /usr/include/qt6/QtWidgets/qlineedit.h \
+ /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
+ /usr/include/qt6/QtGui/qtextoption.h /usr/include/qt6/QtCore/QTextStream \
+ /usr/include/qt6/QtCore/QStorageInfo \
  /usr/include/qt6/QtCore/qstorageinfo.h /usr/include/qt6/QtCore/QSysInfo \
  /usr/include/qt6/QtCore/QTimer /usr/include/qt6/QtCore/qtimer.h

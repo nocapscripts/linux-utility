@@ -27,7 +27,7 @@
      <enum>QTabWidget::TabPosition::South</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="elideMode">
      <enum>Qt::TextElideMode::ElideMiddle</enum>
@@ -2359,6 +2359,24 @@
          </property>
          <property name="text">
           <string>NVIDIA Open</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chIntelGPU">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>160</y>
+           <width>191</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Intel GPU</string>
          </property>
         </widget>
        </widget>
@@ -7892,6 +7910,22 @@
          </property>
         </widget>
        </widget>
+      </widget>
+      <widget class="QPushButton" name="btnOpenLogs">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>640</y>
+         <width>96</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Opens logs folder"> Logs Dir</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
       </widget>
      </widget>
     </widget>
