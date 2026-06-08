@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LinutilGUI
+Exec=LinutilGUI
+Icon=LinutilGUI
+Type=Application
+Categories=Utility;
+Terminal=false
+StartupNotify=true
