@@ -1,3 +1,7 @@
-/build
-
+build/
+build
+Desktop-Release/
+Desktop-Debug/
+Desktop-Release
+Desktop-Debug
 *.AppImage
