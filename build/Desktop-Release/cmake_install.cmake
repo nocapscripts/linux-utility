@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI
+# Install script for directory: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/LinutilGUI"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/LinutilGUI" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/LinutilGUI")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -59,13 +59,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE FILES "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/LinutilGUI/tools.json")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE FILES "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/LinutilGUI/tools.json")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/install_local_manifest.txt"
+  file(WRITE "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -81,6 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

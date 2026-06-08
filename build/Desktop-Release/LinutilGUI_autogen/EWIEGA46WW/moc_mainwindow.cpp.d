@@ -1,5 +1,5 @@
-/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.h \
-  /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/moc_predefs.h \
+/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.h \
+  /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

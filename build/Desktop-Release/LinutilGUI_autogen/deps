@@ -1,15 +1,15 @@
 LinutilGUI_autogen/timestamp: \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/CMakeLists.txt \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/maintenance_tool_provider.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/package-manager.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/qtcreator-project.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/4.3.3/CMakeSystem.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/moc_predefs.h \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.h \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/resources.qrc \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/CMakeLists.txt \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/maintenance_tool_provider.cmake \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/package-manager.cmake \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/.qtcreator/cmake-helper/qtcreator-project.cmake \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/4.3.3/CMakeCXXCompiler.cmake \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/4.3.3/CMakeSystem.cmake \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/moc_predefs.h \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.h \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/resources.qrc \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -720,11 +720,6 @@ LinutilGUI_autogen/timestamp: \
 	/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake \
 	/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake \
 	/usr/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargetsPrecheck.cmake \
-	/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake \
-	/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake \
-	/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake \
-	/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake \
-	/usr/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginAdditionalTargetInfo.cmake \
 	/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake \
 	/usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargets-relwithdebinfo.cmake \
@@ -901,5 +896,5 @@ LinutilGUI_autogen/timestamp: \
 	/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake \
 	/usr/share/cmake/Modules/Platform/Linux.cmake \
 	/usr/share/cmake/Modules/Platform/UnixPaths.cmake \
-	/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.ui \
+	/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.ui \
 	/usr/bin/cmake

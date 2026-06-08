@@ -288,9 +288,32 @@ void MainWindow::runInTerminal(const QString &txt, const QStringList &args)
     ui->statusbar->showMessage(txt + " (starting terminal...)");
 
     QString command = "pkexec";
-
-    for (const QString &arg : args) {
+    for (const QString &arg : args)
         command += " " + arg;
+
+    // Detect terminal
+    QString terminal;
+
+    const QStringList terminals = {
+        "konsole",
+        "gnome-terminal",
+        "xfce4-terminal",
+        "kitty",
+        "alacritty",
+        "terminator",
+        "xterm"
+    };
+
+    for (const QString &t : terminals) {
+        if (QStandardPaths::findExecutable(t).length() > 0) {
+            terminal = t;
+            break;
+        }
+    }
+
+    if (terminal.isEmpty()) {
+        QMessageBox::critical(this, "Error", "No supported terminal found");
+        return;
     }
 
     QProcess *p = new QProcess(this);
@@ -315,16 +338,29 @@ void MainWindow::runInTerminal(const QString &txt, const QStringList &args)
                 p->deleteLater();
             });
 
-    p->start(
-        "konsole",
-        {
-            "-e",
-            "bash", "-c",
-            command + "; echo; echo 'Press Enter to close...'; read"
-        }
-        );
+    QStringList terminalArgs;
 
-    ui->statusbar->showMessage(txt + " launched in terminal");
+    if (terminal == "konsole") {
+        terminalArgs << "-e" << "bash" << "-c"
+                     << command + "; echo; echo 'Press Enter to close...'; read";
+    }
+    else if (terminal == "gnome-terminal") {
+        terminalArgs << "--" << "bash" << "-c"
+                     << command + "; echo; echo 'Press Enter...'; read";
+    }
+    else if (terminal == "xfce4-terminal") {
+        terminalArgs << "-e" << "bash -c \"" +
+                                    command + "; echo; read\"";
+    }
+    else {
+        // generic fallback (xterm/kitty/alacritty)
+        terminalArgs << "-e" << "bash" << "-c"
+                     << command + "; echo; read";
+    }
+
+    p->start(terminal, terminalArgs);
+
+    ui->statusbar->showMessage(txt + " launched in " + terminal);
 }
 
 void MainWindow::runWithProgress(

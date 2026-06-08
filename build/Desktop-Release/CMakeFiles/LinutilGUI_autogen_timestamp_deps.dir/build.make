@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI
+CMAKE_SOURCE_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release
+CMAKE_BINARY_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release
 
 # Utility rule file for LinutilGUI_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/depend:
-	cd /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI_autogen_timestamp_deps
+	cd /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI_autogen_timestamp_deps
 .PHONY : CMakeFiles/LinutilGUI_autogen_timestamp_deps.dir/depend
 

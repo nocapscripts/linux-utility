@@ -1,7 +1,7 @@
 CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp \
  /usr/include/stdc-predef.h \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.h \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -354,7 +354,7 @@ CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QCheckBox \
  /usr/include/qt6/QtWidgets/qcheckbox.h \
  /usr/include/qt6/QtWidgets/qabstractbutton.h \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/include/./ui_mainwindow.h \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/include/./ui_mainwindow.h \
  /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtWidgets/QApplication \
  /usr/include/qt6/QtWidgets/qapplication.h \
  /usr/include/qt6/QtCore/qcoreapplication.h \

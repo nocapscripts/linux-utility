@@ -9,10 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "LinutilGUI_autogen/timestamp" "custom" "LinutilGUI_autogen/deps"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o.d"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp" "CMakeFiles/LinutilGUI.dir/main.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/main.cpp.o.d"
-  "/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp" "CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o.d"
+  "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
+  "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o.d"
+  "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp" "CMakeFiles/LinutilGUI.dir/main.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/main.cpp.o.d"
+  "/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp" "CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o.d"
   "" "LinutilGUI" "gcc" "CMakeFiles/LinutilGUI.dir/link.d"
   )
 

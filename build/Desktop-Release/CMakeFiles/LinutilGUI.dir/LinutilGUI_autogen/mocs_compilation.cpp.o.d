@@ -1,8 +1,8 @@
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o: \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/../../../../mainwindow.h \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/moc_mainwindow.cpp \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/../../../../mainwindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

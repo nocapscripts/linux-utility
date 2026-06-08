@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI
+CMAKE_SOURCE_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release
+CMAKE_BINARY_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release
 
 # Utility rule file for LinutilGUI_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/LinutilGUI_autogen: LinutilGUI_autogen/timestamp
 LinutilGUI_autogen/timestamp: /usr/lib/qt6/moc
 LinutilGUI_autogen/timestamp: /usr/lib/qt6/uic
 LinutilGUI_autogen/timestamp: CMakeFiles/LinutilGUI_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target LinutilGUI"
-	/usr/bin/cmake -E cmake_autogen /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutogenInfo.json Release
-	/usr/bin/cmake -E touch /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target LinutilGUI"
+	/usr/bin/cmake -E cmake_autogen /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutogenInfo.json Release
+	/usr/bin/cmake -E touch /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/timestamp
 
 CMakeFiles/LinutilGUI_autogen.dir/codegen:
 .PHONY : CMakeFiles/LinutilGUI_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/LinutilGUI_autogen.dir/clean:
 .PHONY : CMakeFiles/LinutilGUI_autogen.dir/clean
 
 CMakeFiles/LinutilGUI_autogen.dir/depend:
-	cd /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI_autogen
+	cd /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI_autogen
 .PHONY : CMakeFiles/LinutilGUI_autogen.dir/depend
 

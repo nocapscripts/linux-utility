@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI
+CMAKE_SOURCE_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release
+CMAKE_BINARY_DIR = /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LinutilGUI.dir/depend.make
@@ -72,17 +72,17 @@ include CMakeFiles/LinutilGUI.dir/flags.make
 LinutilGUI_autogen/timestamp: /usr/lib/qt6/moc
 LinutilGUI_autogen/timestamp: /usr/lib/qt6/uic
 LinutilGUI_autogen/timestamp: CMakeFiles/LinutilGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target LinutilGUI"
-	/usr/bin/cmake -E cmake_autogen /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutogenInfo.json Release
-	/usr/bin/cmake -E touch /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target LinutilGUI"
+	/usr/bin/cmake -E cmake_autogen /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutogenInfo.json Release
+	/usr/bin/cmake -E touch /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/timestamp
 
-LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/resources.qrc
+LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/resources.qrc
 LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/LinutilGUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
-LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/tools.json
+LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/tools.json
 LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/rcc
 LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
-	/usr/bin/cmake -E cmake_autorcc /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json Release
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
+	/usr/bin/cmake -E cmake_autorcc /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json Release
 
 CMakeFiles/LinutilGUI.dir/codegen:
 .PHONY : CMakeFiles/LinutilGUI.dir/codegen
@@ -90,58 +90,58 @@ CMakeFiles/LinutilGUI.dir/codegen:
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o: CMakeFiles/LinutilGUI.dir/flags.make
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o: LinutilGUI_autogen/mocs_compilation.cpp
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o: CMakeFiles/LinutilGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o -MF CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o -c /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o -MF CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.o -c /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp
 
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp > CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp > CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/mocs_compilation.cpp -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/LinutilGUI.dir/main.cpp.o: CMakeFiles/LinutilGUI.dir/flags.make
-CMakeFiles/LinutilGUI.dir/main.cpp.o: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp
+CMakeFiles/LinutilGUI.dir/main.cpp.o: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp
 CMakeFiles/LinutilGUI.dir/main.cpp.o: CMakeFiles/LinutilGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LinutilGUI.dir/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/main.cpp.o -MF CMakeFiles/LinutilGUI.dir/main.cpp.o.d -o CMakeFiles/LinutilGUI.dir/main.cpp.o -c /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LinutilGUI.dir/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/main.cpp.o -MF CMakeFiles/LinutilGUI.dir/main.cpp.o.d -o CMakeFiles/LinutilGUI.dir/main.cpp.o -c /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp
 
 CMakeFiles/LinutilGUI.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LinutilGUI.dir/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp > CMakeFiles/LinutilGUI.dir/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp > CMakeFiles/LinutilGUI.dir/main.cpp.i
 
 CMakeFiles/LinutilGUI.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LinutilGUI.dir/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp -o CMakeFiles/LinutilGUI.dir/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp -o CMakeFiles/LinutilGUI.dir/main.cpp.s
 
 CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: CMakeFiles/LinutilGUI.dir/flags.make
-CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp
+CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp
 CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o: CMakeFiles/LinutilGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o -MF CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o.d -o CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o -c /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o -MF CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o.d -o CMakeFiles/LinutilGUI.dir/mainwindow.cpp.o -c /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp
 
 CMakeFiles/LinutilGUI.dir/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LinutilGUI.dir/mainwindow.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp > CMakeFiles/LinutilGUI.dir/mainwindow.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp > CMakeFiles/LinutilGUI.dir/mainwindow.cpp.i
 
 CMakeFiles/LinutilGUI.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LinutilGUI.dir/mainwindow.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.cpp -o CMakeFiles/LinutilGUI.dir/mainwindow.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.cpp -o CMakeFiles/LinutilGUI.dir/mainwindow.cpp.s
 
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/LinutilGUI.dir/flags.make
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/LinutilGUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.i
 
 CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/LinutilGUI.dir/LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp.s
 
 # Object files for target LinutilGUI
 LinutilGUI_OBJECTS = \
@@ -166,10 +166,10 @@ LinutilGUI: /usr/lib/libGLX.so
 LinutilGUI: /usr/lib/libOpenGL.so
 LinutilGUI: /usr/lib/libQt6Core.so.6.11.1
 LinutilGUI: CMakeFiles/LinutilGUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable LinutilGUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable LinutilGUI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LinutilGUI.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying tools.json to build output"
-	/usr/bin/cmake -E copy_if_different /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/tools.json /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/tools.json
+	/usr/bin/cmake -E copy_if_different /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/tools.json /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/tools.json
 
 # Rule to build all files generated by this target.
 CMakeFiles/LinutilGUI.dir/build: LinutilGUI
@@ -181,6 +181,6 @@ CMakeFiles/LinutilGUI.dir/clean:
 
 CMakeFiles/LinutilGUI.dir/depend: LinutilGUI_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/LinutilGUI.dir/depend: LinutilGUI_autogen/timestamp
-	cd /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI
+	cd /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/build/Desktop-Release/CMakeFiles/LinutilGUI.dir/DependInfo.cmake "--color=$(COLOR)" LinutilGUI
 .PHONY : CMakeFiles/LinutilGUI.dir/depend
 

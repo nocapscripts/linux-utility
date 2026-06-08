@@ -1,7 +1,7 @@
 CMakeFiles/LinutilGUI.dir/main.cpp.o: \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/main.cpp \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/main.cpp \
  /usr/include/stdc-predef.h \
- /mnt/Sten/Stuff/LinutilGUI/LinutilGUI/mainwindow.h \
+ /home/sten/Documents/Stuff/LinuxUtils/LinutilGUI/mainwindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

@@ -34,10 +34,12 @@
 
   { "checkbox": "chNvidiaCurrent", "package": "nvidia" },
   { "checkbox": "chNvidiaOpen", "package": "nvidia-open" },
-  { "checkbox": "chPascalNvidia580", "package": "nvidia-580xx-dkms"},
-  { "checkbox": "chPascalNvidia470", "package": "nvidia-470xx-dkms"},
-  { "checkbox": "chPascalNvidia390", "package": "nvidia-390xx-dkms"},
+  { "checkbox": "chLegacyNvidia580", "package": "nvidia-580xx-dkms"},
+  { "checkbox": "chLegacyNvidia470", "package": "nvidia-470xx-dkms"},
+  { "checkbox": "chLegacyNvidia390", "package": "nvidia-390xx-dkms"},
 
   { "checkbox": "chNODEJS", "package": "nodejs" }
+
+
 
 ]
